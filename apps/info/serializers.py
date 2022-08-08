@@ -10,9 +10,9 @@ class ActiveSerializer(serializers.ModelSerializer):
         model=Active
         fields=['all', 'today']
 
-class ActiveAllSerializer(serializers.ModelSerializer):
+class ActiveListSerializer(serializers.ModelSerializer):
     class Meta:
-        model=ActiveAll
+        model=ActiveList
         fields=['date', 'int']
 
 

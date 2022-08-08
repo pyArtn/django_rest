@@ -1,4 +1,4 @@
-from apps.info.models import ActiveAll
+from apps.info.models import ActiveList
 from django_filters import rest_framework as filters
 
 # class CharFilterInFilter(filters.BaseInFilter, filters.CharFilter):
@@ -9,5 +9,5 @@ class ActiveFilter(filters.FilterSet):
     date = filters.DateFilter()
     # date = filters.
     class Meta:
-        model = ActiveAll
+        model = ActiveList
         fields = ['date', 'int']

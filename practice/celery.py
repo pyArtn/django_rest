@@ -15,8 +15,8 @@ app.autodiscover_tasks()
 
 
 app.conf.beat_schedule={
-    'im': {
-        'task':'apps.user.tasks.send',
+    'send_to_gmale': {
+        'task':'apps.info.tasks.send_info_tg',
         'schedule': 60
     }
 }

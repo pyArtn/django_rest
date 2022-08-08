@@ -12,17 +12,10 @@ class SaveActive:
         r = self.get_response(request)
 
         assert hasattr(request, 'user')
+        today = datetime.date.today()
         if request.user.is_authenticated:
-            if not Active.objects.all():
+            if not  Active.objects.all():
                 Active.objects.create(id = 1, all = 0, today = 0, date = today)
-
-            today = datetime.date.today()
-            active = Active.objects.get(id = 1)
-
-
-            if active.date != today:
-                ActiveAll.objects.create(date = active.date, int = active.today)
-                Active.objects.all().update(date = today, today = 0)
             Active.objects.all().update(all = F("all") + 1, today = F("today") + 1)
 
         return r

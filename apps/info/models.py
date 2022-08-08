@@ -13,7 +13,7 @@ class Active(models.Model):
         super().save(*args, **kwargs)
 
 
-class ActiveAll(models.Model):
+class ActiveList(models.Model):
     date = models.DateField()
     int = models.IntegerField()
 

@@ -17,8 +17,8 @@ class ActiveView(generics.ListAPIView):
 
 
 class ActiveAllListView(generics.ListAPIView):
-    queryset = ActiveAll.objects.all()
-    serializer_class = ActiveAllSerializer
+    queryset = ActiveList.objects.all()
+    serializer_class = ActiveListSerializer
     filter_backends = (DjangoFilterBackend, SearchFilter, OrderingFilter)
     filterset_class = ActiveFilter
     ordering_fields = ['date', 'int']
